@@ -14,9 +14,17 @@ pygame.display.set_caption('Merge Sort')
 def generatearray(lowerlimit,upperlimit,length):
     arr = []
     for i in range(0,length):
-        arr.append(random.randrange(lowerlimit,upperlimit))
+        arr.append(2*i)
 
+        #arr.append(random.randrange(lowerlimit,upperlimit))
+
+    random.shuffle(arr)
     return arr
+#    arr = []
+#    for i in range(0,length):
+#        arr.append(random.randrange(lowerlimit,upperlimit))
+#
+#    return arr
 
 def mergesort(arr,temparr,left,right):
     if left < right:

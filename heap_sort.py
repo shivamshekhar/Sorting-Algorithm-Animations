@@ -14,9 +14,17 @@ pygame.display.set_caption('Heap Sort')
 def generatearray(lowerlimit,upperlimit,length):
     arr = []
     for i in range(0,length):
-        arr.append(random.randrange(lowerlimit,upperlimit))
+        arr.append(2*i)
 
+        #arr.append(random.randrange(lowerlimit,upperlimit))
+
+    random.shuffle(arr)
     return arr
+#    arr = []
+#    for i in range(0,length):
+#        arr.append(random.randrange(lowerlimit,upperlimit))
+#
+#    return arr
 
 def heapify(arr, n, i):
     largest = i
@@ -44,7 +52,7 @@ def heapSort(arr):
     for i in range(n-1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
-        
+
 def displayarray(arr):
     image = pygame.Surface((width - width/5,height - height/5))
     rect = image.get_rect()
